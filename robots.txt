@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# After deploying, add:  Sitemap: https://your-menu-address.example/sitemap.xml

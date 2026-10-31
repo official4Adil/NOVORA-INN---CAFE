@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ===== SEO (script.js refreshes these from HOTEL_INFO in menu-data.js) ===== -->
+  <title>Menu | Your Hotel Name</title>
+  <meta name="description" content="Browse the full digital menu of Your Hotel Name: breakfast, dosa, starters, main course, biryani, beverages and desserts, with prices in rupees.">
+  <meta name="theme-color" content="#0E2F26">
+  <meta name="robots" content="index, follow">
+  <!-- After deploying, uncomment and set your real address:
+  <link rel="canonical" href="https://your-menu-address.example/"> -->
+
+  <!-- Social sharing preview (WhatsApp, Facebook, etc.) -->
+  <meta property="og:type" content="restaurant.menu">
+  <meta property="og:title" content="Menu | Your Hotel Name">
+  <meta property="og:description" content="Scan, browse and order from the full digital menu.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Icons -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Fonts: Fraunces (headings) + Figtree (text). System fonts are used if offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- menu-data.js must load before script.js (defer keeps the order) -->
+  <script src="menu-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#menu">Skip to the menu</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__logo" data-rise style="--i:0">
+        <img id="hotel-logo" src="assets/logo.png" alt="Hotel logo" width="88" height="88">
+      </div>
+      <h1 class="hero__name" id="hotel-name" data-rise style="--i:1">Your Hotel Name</h1>
+      <p class="hero__tagline" id="hotel-tagline" data-rise style="--i:2">Your tagline goes here</p>
+
+      <p class="hero__meta" data-rise style="--i:3">
+        <span class="status" id="hotel-status" hidden></span>
+        <span class="table-tag" id="table-tag" hidden></span>
+      </p>
+
+      <!-- Call / WhatsApp / Directions buttons are created by script.js -->
+      <div class="hero__actions" id="hero-actions" data-rise style="--i:4"></div>
+    </div>
+  </header>
+
+  <!-- ===================== SEARCH + CATEGORIES ===================== -->
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar__inner">
+      <div class="toolbar__row">
+        <form class="search" id="search-form" role="search" autocomplete="off">
+          <label class="visually-hidden" for="search-input">Search the menu</label>
+          <span class="icon search__icon" data-icon="search"></span>
+          <input id="search-input" type="search" name="q" placeholder="Search dishes, e.g. dosa, paneer" enterkeyhint="search" inputmode="search" spellcheck="false">
+          <button class="search__clear" id="search-clear" type="button" aria-label="Clear search" hidden>
+            <span class="icon" data-icon="close"></span>
+          </button>
+        </form>
+
+        <!-- Shown only when the menu contains at least one non-veg item -->
+        <div class="diet" id="diet-filter" role="group" aria-label="Filter by food type" hidden></div>
+      </div>
+
+      <nav class="chips-wrap" aria-label="Menu categories">
+        <ul class="chips" id="category-nav"></ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===================== MENU ===================== -->
+  <main id="menu" tabindex="-1">
+    <div class="container">
+      <p class="results-note" id="results-note" aria-live="polite"></p>
+      <div id="menu-root">
+        <noscript><p class="empty">Please enable JavaScript to view the menu.</p></noscript>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== VISIT US ===================== -->
+  <footer class="visit" id="visit">
+    <div class="container">
+      <h2 class="visit__title">Visit us</h2>
+      <div class="visit__grid">
+        <section class="visit__col" aria-labelledby="v-hours">
+          <h3 id="v-hours">Opening hours</h3>
+          <div id="info-hours"></div>
+        </section>
+        <section class="visit__col" aria-labelledby="v-contact">
+          <h3 id="v-contact">Contact</h3>
+          <div id="info-contact"></div>
+        </section>
+        <section class="visit__col" aria-labelledby="v-find">
+          <h3 id="v-find">Find us</h3>
+          <div id="info-location"></div>
+        </section>
+      </div>
+      <p class="visit__note" id="footer-note"></p>
+      <p class="visit__copy" id="footer-copy"></p>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING BUTTONS ===================== -->
+  <div class="fab-stack">
+    <button class="fab fab--top" id="back-to-top" type="button" aria-label="Back to top">
+      <span class="icon" data-icon="arrowUp"></span>
+    </button>
+    <a class="fab fab--wa" id="wa-fab" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" hidden>
+      <span class="icon" data-icon="chat"></span>
+    </a>
+  </div>
+</body>
+</html>
