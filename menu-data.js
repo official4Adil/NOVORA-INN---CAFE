@@ -17,7 +17,7 @@
 const HOTEL_INFO = {
   name: "VEG CAFE",                       // >>> PLACEHOLDER <<<
   tagline: "Pure Veg",             // >>> PLACEHOLDER <<<
-  logo: "assets/logo.png",                       // replace the file in /assets (keep the name, or change it here)
+  logo: "logo.png",                       // replace the file in /assets (keep the name, or change it here)
 
   // Phone number shown on the "Call" button. Leave "" to hide the button.
   phone: "+9180236674",                      // >>> PLACEHOLDER <<<
