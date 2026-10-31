@@ -20,7 +20,7 @@ const HOTEL_INFO = {
   logo: "logo.png",                       // replace the file in /assets (keep the name, or change it here)
 
   // Phone number shown on the "Call" button. Leave "" to hide the button.
-  phone: "+9180236674",                      // >>> PLACEHOLDER <<<
+  phone: "9180236674",                      // >>> PLACEHOLDER <<<
 
   // WhatsApp number: country code + number, digits only (e.g. "919876543210").
   // Leave "" to hide the green WhatsApp button completely.
